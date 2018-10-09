@@ -40,14 +40,18 @@ class App extends Component<Props> {
 
     this.state = {
       dataSource: ds.cloneWithRows([
-        { id: "0", value: "General Column2d" },
-        { id: "1", value: "3D Pie Chart" },
-        { id: "2", value: "Update Chart Data" },
-        { id: "3", value: "Events" },
-        { id: "4", value: "Drill down" },
-        { id: "5", value: "Gauge" },
-        { id: "6", value: "Change chart type at runtime" },
-        { id: "7", value: "Theme" }
+        { id: "0", value: "General Column2d", path: "PlainColumn2D" },
+        { id: "1", value: "3D Pie Chart", path: "PieChart3D" },
+        { id: "2", value: "Update Chart Data", path: "UpdateChartData" },
+        { id: "3", value: "Events", path: "Events" },
+        { id: "4", value: "Drill down", path: "DrillDown" },
+        { id: "5", value: "Gauge", path: "Gauge" },
+        {
+          id: "6",
+          value: "Change chart type at runtime",
+          path: "ChartRunTime"
+        },
+        { id: "7", value: "Theme", path: "Theme" }
       ]),
       seletedComponentIndex: -1
     };
@@ -56,10 +60,8 @@ class App extends Component<Props> {
   }
 
   renderComponents(rowData) {
-    let index = rowData.id;
-    if (Number(index) == 0) {
-      this.props.navigation.navigate("Second");
-    }
+    let { path, id, value } = rowData;
+    this.props.navigation.navigate(path);
   }
 
   renderListItem(rowData) {
@@ -136,7 +138,14 @@ const styles = StyleSheet.create({
 export default createStackNavigator(
   {
     Home: App,
-    Second: PlainColumn2D
+    PlainColumn2D: PlainColumn2D
+    // PieChart3D,
+    // UpdateChartData,
+    // Events,
+    // DrillDown,
+    // Gauge,
+    // ChartRunTime,
+    // Theme
   },
   {
     initialRouteName: "Home"
