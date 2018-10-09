@@ -22,6 +22,7 @@ import {
 import Ripple from "react-native-material-ripple";
 import { createStackNavigator } from "react-navigation";
 import PlainColumn2D from "./components/PlainColumn2D";
+import PieChart3D from './components/PieChart3D';
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -96,19 +97,15 @@ class App extends Component<Props> {
   }
 
   render() {
-    if (this.state.seletedComponentIndex == -1) {
-      return (
-        <View style={styles.container}>
-          <ListView
-            style={styles.list}
-            dataSource={this.state.dataSource}
-            renderRow={this.renderListItem.bind(this)}
-          />
-        </View>
-      );
-    } else if (this.state.seletedComponentIndex == 0) {
-      return <PlainColumn2D />;
-    }
+    return (
+      <View style={styles.container}>
+        <ListView
+          style={styles.list}
+          dataSource={this.state.dataSource}
+          renderRow={this.renderListItem.bind(this)}
+        />
+      </View>
+    );
   }
 }
 
@@ -138,7 +135,8 @@ const styles = StyleSheet.create({
 export default createStackNavigator(
   {
     Home: App,
-    PlainColumn2D: PlainColumn2D
+    PlainColumn2D: PlainColumn2D,
+    PieChart3D: PieChart3D
     // PieChart3D,
     // UpdateChartData,
     // Events,
