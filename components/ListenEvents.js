@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import { Platform, StyleSheet, Text, View, Alert } from "react-native";
 import FusionCharts from "react-native-fusioncharts";
-import { View, Text, StyleSheet, Platform, Button, Alert } from "react-native";
+import CircularJson from "circular-json";
 
-class UpdateChartData extends Component {
+export default class ListenEvents extends Component {
   constructor(props) {
     super(props);
-    this.changeData = this.changeData.bind(this);
+
     this.state = {
       type: "column2d",
       width: "100%",
@@ -18,8 +19,7 @@ class UpdateChartData extends Component {
           xAxisName: "Country",
           yAxisName: "Reserves (MMbbl)",
           numberSuffix: "K",
-          theme: "fusion",
-          updateAnimDuration: "0.4"
+          theme: "fusion"
         },
         data: [
           {
@@ -55,6 +55,11 @@ class UpdateChartData extends Component {
             value: "30"
           }
         ]
+      },
+      events: {
+        dataplotclick: (e, a) => {
+          Alert.alert(`You clicked on ${e.data.categoryLabel}`);
+        }
       }
     };
     this.libraryPath = Platform.select({
@@ -64,28 +69,10 @@ class UpdateChartData extends Component {
     });
   }
 
-  changeData() {
-    let dataSource = this.state.dataSource;
-    dataSource.data[2].value = this.getRandomNumber();
-    dataSource.data[3].value = this.getRandomNumber();
-    this.setState({
-      dataSource: dataSource
-    });
-  }
-
-  /*
-  Get a random number from 50 to 300
-  */
-  getRandomNumber() {
-    var max = 300,
-      min = 50;
-    return Math.round((max - min) * Math.random() + min);
-  }
-
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.header}>Update Chart Data</Text>
+        <Text style={styles.header}>A Column 2D Chart</Text>
         <View style={styles.chartContainer}>
           <FusionCharts
             type={this.state.type}
@@ -93,11 +80,9 @@ class UpdateChartData extends Component {
             height={this.state.height}
             dataFormat={this.state.dataFormat}
             dataSource={this.state.dataSource}
+            events={this.state.events}
             libraryPath={this.libraryPath} // set the libraryPath property
           />
-        </View>
-        <View style={styles.buttonContainer}>
-          <Button title="Update Chart Data" onPress={this.changeData} />
         </View>
       </View>
     );
@@ -113,18 +98,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 20,
     textAlign: "center",
-    paddingBottom: 16
+    paddingBottom: 10
   },
   chartContainer: {
     height: 400,
     borderColor: "#000",
-    borderWidth: 2
-  },
-  buttonContainer: {
-    alignItems: "center",
-    padding: 10,
-    marginTop: 10
+    borderWidth: 1
   }
 });
-
-export default UpdateChartData;
