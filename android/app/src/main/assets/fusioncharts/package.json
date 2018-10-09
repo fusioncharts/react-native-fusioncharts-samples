@@ -1,0 +1,67 @@
+{
+  "_from": "fusioncharts@latest",
+  "_id": "fusioncharts@3.13.1-sr.2",
+  "_inBundle": false,
+  "_integrity": "sha512-NmIUnsVB6OMk0+WUK3orycGrI2YlzAkoaG25k+J5ADimrY9i2LduqzelT5umNL95hYWE1qE53V5vXCodjbp1FA==",
+  "_location": "/fusioncharts",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "fusioncharts@latest",
+    "name": "fusioncharts",
+    "escapedName": "fusioncharts",
+    "rawSpec": "latest",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/fusioncharts/-/fusioncharts-3.13.1-sr.2.tgz",
+  "_shasum": "edd8154b191aa49dcc203b6f1057282d0fca1a06",
+  "_spec": "fusioncharts@latest",
+  "_where": "/Users/rohondey/Desktop/Projects/react-native/react-native-fusioncharts-samples",
+  "author": {
+    "name": "FusionCharts Technologies",
+    "email": "support@fusioncharts.com"
+  },
+  "bugs": {
+    "url": "http://www.fusioncharts.com/contact-support/"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "core-js": "2.5.6",
+    "promise-polyfill": "7.1.2",
+    "ramda": "0.25.0"
+  },
+  "deprecated": false,
+  "description": "FusionCharts JavaScript charting framework",
+  "homepage": "http://www.fusioncharts.com/",
+  "keywords": [
+    "fusioncharts",
+    "charts",
+    "dataviz",
+    "graphs",
+    "visualization",
+    "js-charts",
+    "javascript-charts",
+    "dashboards",
+    "data-stories",
+    "bar-charts",
+    "pie-charts",
+    "line-charts",
+    "area-charts",
+    "column-charts",
+    "gantt-chart"
+  ],
+  "license": "http://www.fusioncharts.com/buy/",
+  "main": "fusioncharts.js",
+  "name": "fusioncharts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fusioncharts/fusioncharts-dist.git"
+  },
+  "version": "3.13.1-sr.2"
+}
