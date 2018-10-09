@@ -9,8 +9,9 @@
   "dependencies": {
     "react": "16.5.0",
     "react-native": "0.57.1",
-    "react-native-drawer-layout": "^2.0.0",
-    "react-native-material-ripple": "^0.8.0"
+    "react-native-fusioncharts": "^2.0.0",
+    "react-native-material-ripple": "^0.8.0",
+    "react-navigation": "^2.17.0"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",

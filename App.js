@@ -20,6 +20,7 @@ import {
   Alert
 } from "react-native";
 import Ripple from "react-native-material-ripple";
+import { createStackNavigator } from "react-navigation";
 import PlainColumn2D from "./components/PlainColumn2D";
 
 const instructions = Platform.select({
@@ -30,7 +31,7 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-export default class App extends Component<Props> {
+class App extends Component<Props> {
   constructor(props) {
     super(props);
     const ds = new ListView.DataSource({
@@ -57,7 +58,7 @@ export default class App extends Component<Props> {
   renderComponents(rowData) {
     let index = rowData.id;
     if (Number(index) == 0) {
-      this.setState({ seletedComponentIndex: 0 });
+      this.props.navigation.navigate("Second");
     }
   }
 
@@ -127,7 +128,17 @@ const styles = StyleSheet.create({
     marginBottom: 5
   },
   list: {
-    marginTop: 32,
+    marginTop: 16,
     width: "95%"
   }
 });
+
+export default createStackNavigator(
+  {
+    Home: App,
+    Second: PlainColumn2D
+  },
+  {
+    initialRouteName: "Home"
+  }
+);
