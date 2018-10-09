@@ -22,8 +22,9 @@ import {
 import Ripple from "react-native-material-ripple";
 import { createStackNavigator } from "react-navigation";
 import PlainColumn2D from "./components/PlainColumn2D";
-import PieChart3D from './components/PieChart3D';
-import UpdateChartData from './components/UpdateChartData';
+import PieChart3D from "./components/PieChart3D";
+import UpdateChartData from "./components/UpdateChartData";
+import ListenEvents from "./components/ListenEvents";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -45,7 +46,7 @@ class App extends Component<Props> {
         { id: "0", value: "General Column2d", path: "PlainColumn2D" },
         { id: "1", value: "3D Pie Chart", path: "PieChart3D" },
         { id: "2", value: "Update Chart Data", path: "UpdateChartData" },
-        { id: "3", value: "Events", path: "Events" },
+        { id: "3", value: "Listen to events from chart", path: "ListenEvents" },
         { id: "4", value: "Drill down", path: "DrillDown" },
         { id: "5", value: "Gauge", path: "Gauge" },
         {
@@ -138,7 +139,8 @@ export default createStackNavigator(
     Home: App,
     PlainColumn2D: PlainColumn2D,
     PieChart3D: PieChart3D,
-    UpdateChartData: UpdateChartData
+    UpdateChartData: UpdateChartData,
+    ListenEvents: ListenEvents
     // PieChart3D,
     // UpdateChartData,
     // Events,
