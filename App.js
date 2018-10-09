@@ -23,6 +23,7 @@ import Ripple from "react-native-material-ripple";
 import { createStackNavigator } from "react-navigation";
 import PlainColumn2D from "./components/PlainColumn2D";
 import PieChart3D from './components/PieChart3D';
+import UpdateChartData from './components/UpdateChartData';
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -136,7 +137,8 @@ export default createStackNavigator(
   {
     Home: App,
     PlainColumn2D: PlainColumn2D,
-    PieChart3D: PieChart3D
+    PieChart3D: PieChart3D,
+    UpdateChartData: UpdateChartData
     // PieChart3D,
     // UpdateChartData,
     // Events,
