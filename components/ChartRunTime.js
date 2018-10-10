@@ -62,7 +62,7 @@ export default class ChartRunTime extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.header}>A Column 2D Chart</Text>
+        <Text style={styles.header}>Change chart type at runtime</Text>
         <View style={styles.chartContainer}>
           <FusionCharts
             type={this.state.type}
