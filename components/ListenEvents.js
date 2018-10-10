@@ -1,58 +1,58 @@
-import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View, Alert } from "react-native";
-import FusionCharts from "react-native-fusioncharts";
-import CircularJson from "circular-json";
+import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, View, Alert } from 'react-native';
+import FusionCharts from 'react-native-fusioncharts';
+import CircularJson from 'circular-json';
 
 export default class ListenEvents extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      type: "column2d",
-      width: "100%",
-      height: "100%",
-      dataFormat: "json",
+      type: 'column2d',
+      width: '100%',
+      height: '100%',
+      dataFormat: 'json',
       dataSource: {
         chart: {
-          caption: "Countries With Most Oil Reserves [2017-18]",
-          subCaption: "In MMbbl = One Million barrels",
-          xAxisName: "Country",
-          yAxisName: "Reserves (MMbbl)",
-          numberSuffix: "K",
-          theme: "fusion"
+          caption: 'Countries With Most Oil Reserves [2017-18]',
+          subCaption: 'In MMbbl = One Million barrels',
+          xAxisName: 'Country',
+          yAxisName: 'Reserves (MMbbl)',
+          numberSuffix: 'K',
+          theme: 'fusion'
         },
         data: [
           {
-            label: "Venezuela",
-            value: "290"
+            label: 'Venezuela',
+            value: '290'
           },
           {
-            label: "Saudi",
-            value: "260"
+            label: 'Saudi',
+            value: '260'
           },
           {
-            label: "Canada",
-            value: "180"
+            label: 'Canada',
+            value: '180'
           },
           {
-            label: "Iran",
-            value: "140"
+            label: 'Iran',
+            value: '140'
           },
           {
-            label: "Russia",
-            value: "115"
+            label: 'Russia',
+            value: '115'
           },
           {
-            label: "UAE",
-            value: "100"
+            label: 'UAE',
+            value: '100'
           },
           {
-            label: "US",
-            value: "30"
+            label: 'US',
+            value: '30'
           },
           {
-            label: "China",
-            value: "30"
+            label: 'China',
+            value: '30'
           }
         ]
       },
@@ -64,15 +64,15 @@ export default class ListenEvents extends Component {
     };
     this.libraryPath = Platform.select({
       // Specify fusioncharts.html file location
-      android: { uri: "file:///android_asset/fusioncharts.html" },
-      ios: require("../assets/fusioncharts.html")
+      android: { uri: 'file:///android_asset/fusioncharts.html' },
+      ios: require('../assets/fusioncharts.html')
     });
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.header}>A Column 2D Chart</Text>
+        <Text style={styles.header}>Listen to events from chart</Text>
         <View style={styles.chartContainer}>
           <FusionCharts
             type={this.state.type}
@@ -95,14 +95,14 @@ const styles = StyleSheet.create({
     padding: 10
   },
   header: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
     fontSize: 20,
-    textAlign: "center",
+    textAlign: 'center',
     paddingBottom: 10
   },
   chartContainer: {
     height: 400,
-    borderColor: "#000",
+    borderColor: '#000',
     borderWidth: 1
   }
 });
