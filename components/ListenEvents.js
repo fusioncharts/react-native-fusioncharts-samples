@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Alert } from 'react-native';
 import FusionCharts from 'react-native-fusioncharts';
-import CircularJson from 'circular-json';
 
 export default class ListenEvents extends Component {
   constructor(props) {

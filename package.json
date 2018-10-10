@@ -8,7 +8,6 @@
     "build:assets": "fc-build-assets --fc-template ./assets/fusioncharts-tpl.html --fc-library ./assets/fusioncharts && rm -rf assets/fusioncharts"
   },
   "dependencies": {
-    "circular-json": "^0.5.7",
     "fusioncharts": "^3.13.1-sr.2",
     "react": "16.5.0",
     "react-native": "0.57.1",
