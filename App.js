@@ -27,6 +27,7 @@ import UpdateChartData from './components/UpdateChartData';
 import ListenEvents from './components/ListenEvents';
 import DrillDown from './components/DrillDown';
 import Gauge from './components/Gauge';
+import ThemeMenu from './components/ThemeMenu';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -56,7 +57,7 @@ class App extends Component<Props> {
           value: 'Change chart type at runtime',
           path: 'ChartRunTime'
         },
-        { id: '7', value: 'Theme', path: 'Theme' }
+        { id: '7', value: 'Multiple Themes', path: 'ThemeMenu' }
       ]),
       seletedComponentIndex: -1
     };
@@ -144,8 +145,8 @@ export default createStackNavigator(
     UpdateChartData: UpdateChartData,
     ListenEvents: ListenEvents,
     DrillDown: DrillDown,
-    Gauge: Gauge
-    // Gauge,
+    Gauge: Gauge,
+    ThemeMenu: ThemeMenu,
     // ChartRunTime,
     // Theme
   },
