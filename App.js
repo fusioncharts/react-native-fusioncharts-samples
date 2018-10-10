@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   Platform,
   StyleSheet,
@@ -18,19 +18,20 @@ import {
   Animated,
   Easing,
   Alert
-} from "react-native";
-import Ripple from "react-native-material-ripple";
-import { createStackNavigator } from "react-navigation";
-import PlainColumn2D from "./components/PlainColumn2D";
-import PieChart3D from "./components/PieChart3D";
-import UpdateChartData from "./components/UpdateChartData";
-import ListenEvents from "./components/ListenEvents";
+} from 'react-native';
+import Ripple from 'react-native-material-ripple';
+import { createStackNavigator } from 'react-navigation';
+import PlainColumn2D from './components/PlainColumn2D';
+import PieChart3D from './components/PieChart3D';
+import UpdateChartData from './components/UpdateChartData';
+import ListenEvents from './components/ListenEvents';
+import DrillDown from './components/DrillDown';
 
 const instructions = Platform.select({
-  ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
+  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
-    "Double tap R on your keyboard to reload,\n" +
-    "Shake or press menu button for dev menu"
+    'Double tap R on your keyboard to reload,\n' +
+    'Shake or press menu button for dev menu'
 });
 
 type Props = {};
@@ -43,18 +44,18 @@ class App extends Component<Props> {
 
     this.state = {
       dataSource: ds.cloneWithRows([
-        { id: "0", value: "General Column2d", path: "PlainColumn2D" },
-        { id: "1", value: "3D Pie Chart", path: "PieChart3D" },
-        { id: "2", value: "Update Chart Data", path: "UpdateChartData" },
-        { id: "3", value: "Listen to events from chart", path: "ListenEvents" },
-        { id: "4", value: "Drill down", path: "DrillDown" },
-        { id: "5", value: "Gauge", path: "Gauge" },
+        { id: '0', value: 'General Column2d', path: 'PlainColumn2D' },
+        { id: '1', value: '3D Pie Chart', path: 'PieChart3D' },
+        { id: '2', value: 'Update Chart Data', path: 'UpdateChartData' },
+        { id: '3', value: 'Listen to events from chart', path: 'ListenEvents' },
+        { id: '4', value: 'Drill down', path: 'DrillDown' },
+        { id: '5', value: 'Gauge', path: 'Gauge' },
         {
-          id: "6",
-          value: "Change chart type at runtime",
-          path: "ChartRunTime"
+          id: '6',
+          value: 'Change chart type at runtime',
+          path: 'ChartRunTime'
         },
-        { id: "7", value: "Theme", path: "Theme" }
+        { id: '7', value: 'Theme', path: 'Theme' }
       ]),
       seletedComponentIndex: -1
     };
@@ -74,20 +75,20 @@ class App extends Component<Props> {
           style={{
             padding: 20,
             margin: 4,
-            backgroundColor: "#59d99d",
+            backgroundColor: '#59d99d',
             borderRadius: 5,
             shadowOpacity: 0.4,
             shadowRadius: 3,
-            shadowColor: "#000",
+            shadowColor: '#000',
             shadowOffset: { height: 0, width: 0 }
           }}
         >
           <Text
             style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              color: "#FFFFFF",
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              color: '#FFFFFF',
               fontSize: 22
             }}
           >
@@ -114,23 +115,23 @@ class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF'
   },
   welcome: {
     fontSize: 20,
-    textAlign: "center",
+    textAlign: 'center',
     margin: 10
   },
   instructions: {
-    textAlign: "center",
-    color: "#333333",
+    textAlign: 'center',
+    color: '#333333',
     marginBottom: 5
   },
   list: {
     marginTop: 16,
-    width: "95%"
+    width: '95%'
   }
 });
 
@@ -140,16 +141,13 @@ export default createStackNavigator(
     PlainColumn2D: PlainColumn2D,
     PieChart3D: PieChart3D,
     UpdateChartData: UpdateChartData,
-    ListenEvents: ListenEvents
-    // PieChart3D,
-    // UpdateChartData,
-    // Events,
-    // DrillDown,
+    ListenEvents: ListenEvents,
+    DrillDown: DrillDown
     // Gauge,
     // ChartRunTime,
     // Theme
   },
   {
-    initialRouteName: "Home"
+    initialRouteName: 'Home'
   }
 );
