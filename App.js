@@ -26,6 +26,7 @@ import PieChart3D from './components/PieChart3D';
 import UpdateChartData from './components/UpdateChartData';
 import ListenEvents from './components/ListenEvents';
 import DrillDown from './components/DrillDown';
+import Gauge from './components/Gauge';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -142,7 +143,8 @@ export default createStackNavigator(
     PieChart3D: PieChart3D,
     UpdateChartData: UpdateChartData,
     ListenEvents: ListenEvents,
-    DrillDown: DrillDown
+    DrillDown: DrillDown,
+    Gauge: Gauge
     // Gauge,
     // ChartRunTime,
     // Theme
