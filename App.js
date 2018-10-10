@@ -28,6 +28,7 @@ import ListenEvents from './components/ListenEvents';
 import DrillDown from './components/DrillDown';
 import Gauge from './components/Gauge';
 import ThemeMenu from './components/ThemeMenu';
+import ChartRunTime from './components/ChartRunTime';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -147,6 +148,7 @@ export default createStackNavigator(
     DrillDown: DrillDown,
     Gauge: Gauge,
     ThemeMenu: ThemeMenu,
+    ChartRunTime: ChartRunTime
     // ChartRunTime,
     // Theme
   },

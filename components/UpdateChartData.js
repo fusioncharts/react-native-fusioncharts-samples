@@ -1,66 +1,66 @@
-import React, { Component } from "react";
-import FusionCharts from "react-native-fusioncharts";
-import { View, Text, StyleSheet, Platform, Button, Alert } from "react-native";
+import React, { Component } from 'react';
+import FusionCharts from 'react-native-fusioncharts';
+import { View, Text, StyleSheet, Platform, Button, Alert } from 'react-native';
 
 class UpdateChartData extends Component {
   constructor(props) {
     super(props);
     this.changeData = this.changeData.bind(this);
     this.state = {
-      type: "column2d",
-      width: "100%",
-      height: "100%",
-      dataFormat: "json",
+      type: 'column2d',
+      width: '100%',
+      height: '100%',
+      dataFormat: 'json',
       dataSource: {
         chart: {
-          caption: "Countries With Most Oil Reserves [2017-18]",
-          subCaption: "In MMbbl = One Million barrels",
-          xAxisName: "Country",
-          yAxisName: "Reserves (MMbbl)",
-          numberSuffix: "K",
-          theme: "fusion",
-          updateAnimDuration: "0.4"
+          caption: 'Countries With Most Oil Reserves [2017-18]',
+          subCaption: 'In MMbbl = One Million barrels',
+          xAxisName: 'Country',
+          yAxisName: 'Reserves (MMbbl)',
+          numberSuffix: 'K',
+          theme: 'fusion',
+          updateAnimDuration: '0.4'
         },
         data: [
           {
-            label: "Venezuela",
-            value: "290"
+            label: 'Venezuela',
+            value: '290'
           },
           {
-            label: "Saudi",
-            value: "260"
+            label: 'Saudi',
+            value: '260'
           },
           {
-            label: "Canada",
-            value: "180"
+            label: 'Canada',
+            value: '180'
           },
           {
-            label: "Iran",
-            value: "140"
+            label: 'Iran',
+            value: '140'
           },
           {
-            label: "Russia",
-            value: "115"
+            label: 'Russia',
+            value: '115'
           },
           {
-            label: "UAE",
-            value: "100"
+            label: 'UAE',
+            value: '100'
           },
           {
-            label: "US",
-            value: "30"
+            label: 'US',
+            value: '30'
           },
           {
-            label: "China",
-            value: "30"
+            label: 'China',
+            value: '30'
           }
         ]
       }
     };
     this.libraryPath = Platform.select({
       // Specify fusioncharts.html file location
-      android: { uri: "file:///android_asset/fusioncharts.html" },
-      ios: require("../assets/fusioncharts.html")
+      android: { uri: 'file:///android_asset/fusioncharts.html' },
+      ios: require('../assets/fusioncharts.html')
     });
   }
 
@@ -97,7 +97,10 @@ class UpdateChartData extends Component {
           />
         </View>
         <View style={styles.buttonContainer}>
-          <Button title="Update Chart Data" onPress={this.changeData} />
+          <Button
+            title="Update Chart Data"
+            onPress={this.changeData.bind(this)}
+          />
         </View>
       </View>
     );
@@ -110,18 +113,18 @@ const styles = StyleSheet.create({
     padding: 10
   },
   header: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
     fontSize: 20,
-    textAlign: "center",
+    textAlign: 'center',
     paddingBottom: 16
   },
   chartContainer: {
     height: 400,
-    borderColor: "#000",
+    borderColor: '#000',
     borderWidth: 2
   },
   buttonContainer: {
-    alignItems: "center",
+    alignItems: 'center',
     padding: 10,
     marginTop: 10
   }
